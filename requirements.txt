@@ -1,0 +1,28 @@
+# VectorGuard: AI-Driven Threat Triangle Using Native In-Database Vector Search
+# Core dependencies
+
+# Database / vector search
+psycopg2-binary==2.9.9      # PostgreSQL driver
+pgvector==0.2.5              # pgvector Python client (native in-DB vector search)
+sqlalchemy==2.0.30           # ORM / DB connection management
+
+# Embeddings & ML
+sentence-transformers==2.7.0 # generate vector embeddings from log/event text
+scikit-learn==1.4.2          # classical ML baselines (KNN, Decision Tree, etc.)
+numpy==1.26.4
+pandas==2.2.2
+
+# Data handling / preprocessing
+python-dotenv==1.0.1         # environment variable management (DB credentials, etc.)
+
+# API / dashboard (optional, for later phases)
+fastapi==0.111.0
+uvicorn==0.29.0
+streamlit==1.34.0            # quick dashboard for visualizing detected threats
+
+# Utilities
+tqdm==4.66.4
+pyyaml==6.0.1
+
+# Testing
+pytest==8.2.0
