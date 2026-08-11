@@ -114,3 +114,45 @@ _Add team member names here._
 
 ## License
 _Add license here (e.g., MIT), or leave as coursework/academic project._
+
+##python:
+Backend: 
+1. Setup (imports & config)
+
+Loads a .env file for database credentials (host, port, DB name, user, password) — so nothing sensitive is hardcoded.
+Picks a small, fast embedding model (all-MiniLM-L6-v2) that turns text into a 384-number vector.
+
+2. Sample data (SAMPLE_EVENTS)
+Six fake "threat triangle" events standing in for real data you'll plug in later:
+
+2 log-style events (a failed login vs. a normal login)
+2 network-style events (suspicious outbound traffic vs. normal traffic)
+2 behavior-style events (accessing files at odd hours vs. routine access)
+
+There's also one QUERY_EVENT — a new suspicious-looking event you want to check against the stored ones.
+
+3. get_connection()
+Just opens a connection to your PostgreSQL database using the credentials from step 1.
+
+4. setup_schema(conn)
+Runs two SQL commands:
+
+Turns on the pgvector extension (this is what gives Postgres native vector search).
+Creates a threat_events table with columns for the source (log/network/behavior), the raw text, and a VECTOR(384) column to hold the embedding.
+
+5. embed_texts(model, texts)
+Takes a list of strings and converts each one into its embedding vector using the model.
+
+6. insert_events(conn, model, events)
+
+Embeds all 6 sample events.
+Inserts them into the threat_events table — each row gets its source, text, and vector.
+
+7. find_similar_events(conn, model, query_text, top_k=3)
+This is the actual "detection" step:
+
+Embeds the new QUERY_EVENT.
+Runs a SQL query using pgvector's <-> operator (distance search) to find the 3 stored events whose vectors are closest to the query's vector — directly inside the database, no separate vector store needed.
+
+8. main()
+Ties it all together in order: load model → connect to DB → create schema → insert sample events → run the similarity search on QUERY_EVENT → print the top matches with their distance scores (smaller distance = more similar).
