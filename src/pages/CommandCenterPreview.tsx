@@ -32,7 +32,7 @@ export function CommandCenterPreview() {
           <nav className="flex items-center justify-between gap-4 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2.5 backdrop-blur-xl sm:px-6">
             <Link to="/" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white">
               <span className="flex size-8 items-center justify-center rounded-full bg-indigo-500 text-white"><ShieldCheck className="size-4" /></span>
-              FraudShield
+              VectorGuard
             </Link>
             <div className="flex items-center gap-2">
               <Link to="/sign-in" className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white">Log in</Link>
@@ -45,7 +45,7 @@ export function CommandCenterPreview() {
           <div className="mt-8 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-indigo-300">
             <Lock className="size-3" /> Live preview / read-only
           </div>
-          <h1 className="mt-2 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Command Center</h1>
+          <h1 className="mt-2 text-3xl tracking-tight text-white sm:text-4xl">Command Center</h1>
           <p className="mt-2 max-w-xl text-sm text-slate-500">This is the same live data feed the real dashboard runs on. Sign up to run attacks, watch the Blue Team respond, and see the full transaction feed.</p>
         </Reveal>
 

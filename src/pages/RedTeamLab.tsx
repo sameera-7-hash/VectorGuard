@@ -126,7 +126,7 @@ export function RedTeamLab() {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-red-400">Adversarial simulation / 04</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">Red Team Lab</h2>
+            <h2 className="mt-2 text-4xl tracking-tight text-white">Red Team Lab</h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-500">
               Deploy autonomous attack agents against the current defense posture. Every generated payload syncs live into the Blue Team analysis engine.
             </p>

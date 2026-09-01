@@ -86,7 +86,7 @@ export function AppLayout() {
     </aside>
     <main className="lg:pl-64">
       <header className="sticky top-4 z-10 mx-4 mt-4 flex flex-col items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-4 shadow-[0_20px_50px_-24px_rgba(79,70,229,0.4)] backdrop-blur-xl sm:mx-6 sm:min-h-20 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-5 lg:mx-10 lg:px-8">
-        <div><p className="font-mono text-[10px] uppercase tracking-[0.22em] text-indigo-300">SOC / SIMULATION MODE</p><h1 className="mt-1 text-xl font-semibold tracking-tight text-white">{activePage}</h1></div>
+        <div><p className="font-mono text-[10px] uppercase tracking-[0.22em] text-indigo-300">SOC / SIMULATION MODE</p><h1 className="mt-1 text-2xl tracking-tight text-white">{activePage}</h1></div>
         <div className="flex items-center gap-3 font-mono text-[11px] text-zinc-500">
           <span className="hidden sm:inline tabular-nums">{clock}</span>
           <span className="flex items-center gap-2.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1.5 text-emerald-400"><span className="flex size-2 shrink-0 rounded-full bg-emerald-400 status-pulse text-emerald-400" /><span className="whitespace-nowrap">All systems nominal</span></span>

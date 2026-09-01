@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: 'Fraunces', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Orbitron', 'Bitcount', 'Doto', 'Fraunces', Georgia, serif;
+    --font-sans: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -128,13 +128,22 @@
     }
   html {
     @apply font-sans;
+    font-weight: 400;
     }
-  h1, h2, .hero-title {
+  h1, h2, h3, h4, h5, h6, .hero-title {
     font-family: var(--font-heading);
     font-optical-sizing: auto;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     }
+}
+
+.pixel-headline {
+  font-family: "Orbitron", "Bitcount", "Doto", "Fraunces", monospace;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: none;
+  text-wrap: balance;
 }
 
   .bg-\[\#070b12\] { background-color: #0a0a0f; }
@@ -224,6 +233,107 @@
   background-image: radial-gradient(circle at 78% 28%, rgb(79 70 229 / 0.72), transparent 34%), radial-gradient(circle at 38% 92%, rgb(49 46 129 / 0.76), transparent 42%), radial-gradient(circle at 8% 12%, rgb(255 255 255 / 0.12), transparent 28%), conic-gradient(from 210deg at 72% 42%, #1e1b4b, #4338ca, #312e81, #111827, #1e1b4b);
 }
 
+/* Terminal / pixel-grid hero: same indigo/purple hue as the original .security-hero,
+   with a grain/star/scanline atmosphere layered on top as separate absolutely
+   positioned children (see SecurityHero.tsx) so none of them clip text or block clicks. */
+.hero-noir {
+  background-color: #211f49;
+  background-image: radial-gradient(circle at 78% 28%, rgb(79 70 229 / 0.72), transparent 34%), radial-gradient(circle at 38% 92%, rgb(49 46 129 / 0.76), transparent 42%), radial-gradient(circle at 8% 12%, rgb(255 255 255 / 0.12), transparent 28%), conic-gradient(from 210deg at 72% 42%, #1e1b4b, #4338ca, #312e81, #111827, #1e1b4b);
+}
+
+.hero-noir-grain {
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-repeat: repeat;
+  background-size: 140px 140px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: hero-grain-drift 9s steps(8) infinite;
+}
+
+.hero-noir-drift-dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+  animation: hero-star-drift var(--dur, 22s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.hero-noir-stars {
+  background-image:
+    radial-gradient(1px 1px at 8% 20%, rgba(255, 255, 255, 0.55), transparent 100%),
+    radial-gradient(1.5px 1.5px at 15% 55%, rgba(255, 255, 255, 0.4), transparent 100%),
+    radial-gradient(1px 1px at 22% 12%, rgba(255, 255, 255, 0.6), transparent 100%),
+    radial-gradient(1px 1px at 30% 70%, rgba(255, 255, 255, 0.35), transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 30%, rgba(255, 255, 255, 0.5), transparent 100%),
+    radial-gradient(1px 1px at 45% 85%, rgba(255, 255, 255, 0.4), transparent 100%),
+    radial-gradient(1px 1px at 52% 10%, rgba(255, 255, 255, 0.55), transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 45%, rgba(255, 255, 255, 0.35), transparent 100%),
+    radial-gradient(1px 1px at 68% 65%, rgba(255, 255, 255, 0.5), transparent 100%),
+    radial-gradient(1px 1px at 74% 18%, rgba(255, 255, 255, 0.4), transparent 100%),
+    radial-gradient(1.5px 1.5px at 80% 50%, rgba(255, 255, 255, 0.45), transparent 100%),
+    radial-gradient(1px 1px at 88% 28%, rgba(255, 255, 255, 0.55), transparent 100%),
+    radial-gradient(1px 1px at 92% 72%, rgba(255, 255, 255, 0.35), transparent 100%),
+    radial-gradient(1px 1px at 12% 88%, rgba(255, 255, 255, 0.4), transparent 100%),
+    radial-gradient(1.5px 1.5px at 58% 92%, rgba(255, 255, 255, 0.3), transparent 100%),
+    radial-gradient(1px 1px at 96% 40%, rgba(255, 255, 255, 0.45), transparent 100%);
+}
+
+.hero-noir-scanlines {
+  opacity: 0.5;
+  background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0px, rgba(255, 255, 255, 0.06) 1px, transparent 1px, transparent 3px);
+}
+
+.hero-noir-btn-primary {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 rgba(129, 140, 248, 0);
+  transition: box-shadow 300ms ease, border-color 300ms ease, transform 300ms ease, background-color 300ms ease;
+}
+.hero-noir-btn-primary:hover {
+  border-color: rgba(129, 140, 248, 0.6);
+  background-color: rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 28px -6px rgba(129, 140, 248, 0.55);
+  transform: translateY(-2px);
+  animation: hero-btn-power-up 260ms steps(4, end);
+}
+
+.hero-noir-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 300ms ease, color 300ms ease, background-color 300ms ease, transform 300ms ease;
+}
+.hero-noir-btn-ghost:hover {
+  border-color: rgba(129, 140, 248, 0.45);
+  background-color: rgba(99, 102, 241, 0.08);
+  color: white;
+  transform: translateY(-2px);
+  animation: hero-btn-power-up 260ms steps(4, end);
+}
+
+/* Headline "assembling" build-in: each letter is its own span (see PixelBuildIn in
+   SecurityHero.tsx), staggered via the --i custom property set inline per letter. */
+.pixel-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px) scale(0.85);
+  filter: blur(2px);
+  animation: pixel-letter-in 340ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 45ms);
+}
+
+.pixel-cursor {
+  display: inline-block;
+  margin-left: 3px;
+  opacity: 0;
+  animation:
+    pixel-letter-in 200ms ease-out forwards,
+    pixel-cursor-blink 1s step-end infinite;
+  animation-delay:
+    calc(var(--i, 0) * 45ms),
+    calc(var(--i, 0) * 45ms + 250ms);
+}
+
 .scan-grid::before {
   content: "";
   position: absolute;
@@ -302,6 +412,11 @@
 @keyframes cyber-radar-rotate { to { transform: rotate(360deg); } }
 @keyframes cyber-status-ping { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(2.2); opacity: 0; } }
 @keyframes radar-sweep-rotate { to { transform: rotate(360deg); } }
+@keyframes hero-grain-drift { 0%, 100% { transform: translate3d(0, 0, 0); } 25% { transform: translate3d(-2%, 1%, 0); } 50% { transform: translate3d(1%, -2%, 0); } 75% { transform: translate3d(-1%, -1%, 0); } }
+@keyframes hero-star-drift { 0%, 100% { transform: translate(0, 0); opacity: 0.35; } 50% { transform: translate(var(--dx, 8px), var(--dy, -6px)); opacity: 0.75; } }
+@keyframes hero-btn-power-up { 0% { filter: brightness(1); } 25% { filter: brightness(1.4); } 50% { filter: brightness(0.9); } 75% { filter: brightness(1.3); } 100% { filter: brightness(1.05); } }
+@keyframes pixel-letter-in { from { opacity: 0; transform: translateY(6px) scale(0.85); filter: blur(2px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@keyframes pixel-cursor-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
   .dashboard-float, .hero-reveal, .scan-progress, .risk-score, .scan-status span, .scan-beam { animation: none; }
@@ -310,4 +425,8 @@
   .scan-beam { display: none; }
   .cyber-grid-node, .cyber-grid-link, .cyber-grid-ring, .cyber-grid-radar, .status-pulse::before, .radar-sweep-spin { animation: none; }
   .cyber-grid-bg { display: none; }
+  .hero-noir-grain, .hero-noir-drift-dot { animation: none; }
+  .pixel-letter { animation: none; opacity: 1; transform: none; filter: none; }
+  .pixel-cursor { animation: none; opacity: 1; }
+  .hero-noir-btn-primary:hover, .hero-noir-btn-ghost:hover { animation: none; transform: none; }
 }

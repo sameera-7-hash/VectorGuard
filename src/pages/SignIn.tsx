@@ -93,7 +93,7 @@ export function SignIn() {
         <div className="scan-beam" />
         <Link to="/" className="relative z-10 flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white">
           <span className="flex size-8 items-center justify-center rounded-full bg-white text-[#312e81]"><ShieldCheck className="size-4" /></span>
-          FraudShield
+          VectorGuard
         </Link>
 
         <motion.div
@@ -105,8 +105,8 @@ export function SignIn() {
           <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-indigo-200">
             <Sparkles className="size-3.5" /> Built for security teams
           </span>
-          <h1 className="hero-title text-4xl leading-[1.05] text-white xl:text-5xl">
-            Access built for the team that never sleeps.
+          <h1 className="hero-title text-5xl leading-[1.05] text-white xl:text-6xl">
+            Access built for the team that <span className="text-amber-300">never sleeps.</span>
           </h1>
           <div className="mt-10 space-y-5">
             {highlights.map(({ label, detail }, index) => (
@@ -132,7 +132,7 @@ export function SignIn() {
 
       <div className="flex flex-col justify-center px-6 py-12 sm:px-12 lg:px-16 xl:px-20">
         <Link to="/" className="mb-10 inline-flex w-fit items-center gap-2 text-xs font-medium text-white/40 transition-colors hover:text-white/70 lg:hidden">
-          <ArrowLeft className="size-3.5" /> Back to FraudShield
+          <ArrowLeft className="size-3.5" /> Back to VectorGuard
         </Link>
 
         <motion.div
@@ -158,7 +158,7 @@ export function SignIn() {
             </button>
           </div>
 
-          <h2 className="hero-title text-3xl text-white">{mode === "signin" ? "Welcome back." : "Get started."}</h2>
+          <h2 className="hero-title text-4xl text-white">{mode === "signin" ? "Welcome back." : "Get started."}</h2>
           <p className="mt-2 text-sm text-white/45">
             {mode === "signin" ? "Sign in to your security console." : "Set up access to the defense grid."}
           </p>
@@ -218,7 +218,7 @@ export function SignIn() {
           </form>
 
           <p className="mt-8 text-center text-xs text-white/35">
-            {mode === "signin" ? "New to FraudShield? " : "Already have an account? "}
+            {mode === "signin" ? "New to VectorGuard? " : "Already have an account? "}
             <button type="button" onClick={() => { setMode(mode === "signin" ? "signup" : "signin"); setError(""); setNotice("") }} className="font-medium text-indigo-300 hover:text-indigo-200">
               {mode === "signin" ? "Create an account" : "Sign in"}
             </button>

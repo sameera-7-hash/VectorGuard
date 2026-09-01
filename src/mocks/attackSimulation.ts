@@ -18,8 +18,8 @@ export const SIM_ORIGIN_CITIES: SimCity[] = [
 ]
 
 // Roughly the geometric center of the five origin cities above - stands in for
-// "FraudShield Detection Core" on the map, not a real office or datacenter location.
-export const DETECTION_CORE: SimCity = { name: "FraudShield Detection Core", lat: 22, lon: 66 }
+// "VectorGuard Detection Core" on the map, not a real office or datacenter location.
+export const DETECTION_CORE: SimCity = { name: "VectorGuard Detection Core", lat: 22, lon: 66 }
 
 export type SimOutcome = "BLOCK" | "HOLD" | "ALLOW"
 

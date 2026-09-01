@@ -75,7 +75,7 @@ export function Analytics() {
       <Reveal>
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-indigo-300">Intelligence / 06</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">Analytics &amp; Trends</h2>
+          <h2 className="mt-2 text-4xl tracking-tight text-white">Analytics &amp; Trends</h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-500">Detection performance over time and the impact of adaptive defense.</p>
         </div>
       </Reveal>

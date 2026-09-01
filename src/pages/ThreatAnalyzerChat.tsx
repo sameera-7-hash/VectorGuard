@@ -141,7 +141,7 @@ export function ThreatAnalyzerChat() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-yellow-300">Detection intelligence / 04</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-white">Threat Analyzer Chatbot</h2>
+            <h2 className="mt-2 text-4xl tracking-tight text-white">Threat Analyzer Chatbot</h2>
             <p className="mt-2 max-w-xl text-sm text-slate-500">Ask about attack patterns and get answers grounded in the sentinelpay-threats vector index.</p>
           </div>
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-indigo-200">
