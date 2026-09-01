@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:2c5364,100:00c6ff&height=220&section=header&text=SentinelPay%20AI&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Autonomous%20Red%20Team%20vs%20Blue%20Team%20Framework%20for%20Adaptive%20Financial%20Fraud%20Defense&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:2c5364,100:00c6ff&height=220&section=header&text=VectorGuard%20AI&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Autonomous%20Red%20Team%20vs%20Blue%20Team%20Framework%20for%20Adaptive%20Financial%20Fraud%20Defense&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
 
 <br/>
 
